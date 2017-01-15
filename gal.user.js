@@ -8,7 +8,7 @@
 // @match        http://scratch.mit.edu/users/*
 // @downloadURL  https://github.com/7Snails/last-viewed-project/raw/master/gal.user.js
 // @updateURL    https://github.com/7Snails/last-viewed-project/raw/master/gal.user.js
-// @icon         https://raw.githubusercontent.com/7Snails/last-viewed-project/master/icon.png
+// @icon         https://raw.githubusercontent.com/7Snails/get-any-location/master/icon.png
 // ==/UserScript==
 
 var URL = window.location.href;
