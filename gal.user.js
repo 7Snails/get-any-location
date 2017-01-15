@@ -6,16 +6,33 @@
 // @author       @7Snails
 // @match        https://scratch.mit.edu/users/*
 // @match        http://scratch.mit.edu/users/*
+// @match        https://scratch.mit.edu/accounts/settings/
+// @match        http://scratch.mit.edu/accounts/settings/
 // @downloadURL  https://github.com/7Snails/last-viewed-project/raw/master/gal.user.js
 // @updateURL    https://github.com/7Snails/last-viewed-project/raw/master/gal.user.js
 // @icon         https://raw.githubusercontent.com/7Snails/get-any-location/master/icon.png
 // ==/UserScript==
 
-var URL = window.location.href;
-if (URL.includes("scratch.mit.edu/users/") === true) {
-  var user = URL.substring(30, URL.length - 1);
-};
+// Window Detection(s)
+var currentURL = window.location.href;
 
+if (currentURL.includes("scratch.mit.edu/users/") === true) {
+    var user = currentURL.substring(30, currentURL.length - 1);
+}
+
+// Broken Script
+/*
+if (currentURL.includes("scratch.mit.edu/accounts/settings/") === true) {
+    var chosenLocation = encodeURIComponent(prompt("What should the location be?"));
+    var countryList = document.getElementById("country");
+    var newOption = document.createElement("option");
+    newOption.text = chosenLocation;
+    newOption.value = chosenLocation;
+    countryList.add(newOption, countryList[0]);
+}
+*/
+
+// JSON Parsing, etc.
 var xmlhttp = new XMLHttpRequest(),
 		json;
 
