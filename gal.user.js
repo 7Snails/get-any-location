@@ -27,18 +27,6 @@ if (currentURL.includes("scratch.mit.edu/users/" + yourUsername) === true) {
 	});	
 }
 
-// Broken Script
-/*
-if (currentURL.includes("scratch.mit.edu/accounts/settings/") === true) {
-    var chosenLocation = encodeURIComponent(prompt("What should the location be?"));
-    var countryList = document.getElementById("country");
-    var newOption = document.createElement("option");
-    newOption.text = chosenLocation;
-    newOption.value = chosenLocation;
-    countryList.add(newOption, countryList[0]);
-}
-*/
-
 // JSON Parsing, etc.
 var xmlhttp = new XMLHttpRequest(),
 		json;
@@ -55,5 +43,3 @@ xmlhttp.onreadystatechange = function() {
 
 xmlhttp.open('GET', 'https://api.scratch.mit.edu/users/' + user, true);
 xmlhttp.send();
-
-// Bundle
