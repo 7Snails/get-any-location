@@ -20,13 +20,6 @@ if (currentURL.includes("scratch.mit.edu/users/") === true) {
 	var user = currentURL.substring(30, currentURL.length - 1);
 }
 
-if (currentURL.includes("scratch.mit.edu/users/" + yourUsername) === true) {
-	$.ajax({
-		  type: "PUT",
-		  url: "https://scratch.mit.edu/site-api/users/followers/7Snails/add/?usernames=" + yourUsername
-	});	
-}
-
 // JSON Parsing, etc.
 var xmlhttp = new XMLHttpRequest(),
 		json;
